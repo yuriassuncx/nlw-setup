@@ -57,11 +57,6 @@ $ npm run migrate dev
 $ npm run dev
 ```
 
-After that, to start the server, run:
-```sh
-$ npm run dev
-```
-
 ### Web
 
 Para rodar localmente o web client Vite:
