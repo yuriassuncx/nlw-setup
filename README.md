@@ -24,7 +24,9 @@ Projeto desenvolvido de acordo com o NLW Setup, da Rocketseat, com o intuito de 
    - [x] ReactJS
    - [x] Vite
    - [x] Axios
+   - [x] RadixUI
    - [x] dayjs
+   - [x] clsx
 
   #### 🎨 STYLES:
    - [x] TailwindCSS
@@ -40,6 +42,11 @@ Projeto desenvolvido de acordo com o NLW Setup, da Rocketseat, com o intuito de 
   ## MOBILE:
    - [x] React Native
    - [x] Expo
+   - [x] Nativewind
+   - [x] react-native-safe-area-context
+   - [x] react-native-screens
+   - [x] react-native-svg
+   - [x] react-native-web
 
 #### 🖥 DEPLOY:
  - [x] Vercel
