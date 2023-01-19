@@ -36,7 +36,7 @@ model Day {
   date      DateTime
   dayHabits DayHabit[]
 
-  @@index([date])
+  @@unique([date])
   @@map("days")
 }
 
