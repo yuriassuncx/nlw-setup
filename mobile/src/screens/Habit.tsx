@@ -3,7 +3,7 @@ import { ScrollView, Text, View } from "react-native";
 import dayjs from "dayjs";
 
 import { BackButton } from "../components/BackButton";
-import { ProgressBar } from "../components/ProgressBar";
+import { ProgressBar } from "../components/Progress.Bar";
 import { Checkbox } from "../components/Checkbox";
 
 interface Params {
@@ -42,7 +42,7 @@ export function Habit() {
             checked={false}
           />
 
-          <Checkbox
+          <Checkbox 
             title="Caminhar"
             checked
           />
