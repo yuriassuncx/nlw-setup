@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useApplication } from "../hooks/useApplication";
 
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { Check } from "phosphor-react";
@@ -10,6 +11,7 @@ import { api } from "../lib/axios";
 import toast, { Toaster } from "react-hot-toast";
 
 export function NewHabitForm() {
+    const { user } = useApplication();
     const [habit, setHabit] = useState("");
     const [weekDays, setWeekDays] = useState<number[]>([]);
 
@@ -32,6 +34,8 @@ export function NewHabitForm() {
     }
 
     function handleToggleWeekDay(weekDay: number) {
+        if (!user) return;
+
         if (weekDays.includes(weekDay)) {
             const weekDaysWithRemovedOne = weekDays.filter(day => day !== weekDay);
 

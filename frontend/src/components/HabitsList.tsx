@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import { api } from '../lib/axios';
 import dayjs from 'dayjs';
+import { useApplication } from '../hooks/useApplication';
 
 interface HabitsListProps {
     date: Date;
@@ -22,6 +23,8 @@ interface HabitsInfo {
 
 export function HabitsList({ date, onCompletedChange }: HabitsListProps) {
     const [habitsInfo, setHabitsInfo] = useState<HabitsInfo>();
+    
+    const { user } = useApplication();
 
     useEffect(() => {
         api.get('/day', {
@@ -65,8 +68,8 @@ export function HabitsList({ date, onCompletedChange }: HabitsListProps) {
                     key={habit.id}
                     onCheckedChange={() => handleToggleHabit(habit.id)}
                     defaultChecked={habitsInfo.completedHabits.includes(habit.id)}
-                    disabled={isDateInPast}
-                    className="flex items-center gap-3 group focus:outline-none"
+                    disabled={isDateInPast || !user}
+                    className="flex items-center gap-3 group focus:outline-none disabled:cursor-not-allowed"
                 >
                     <div className="flex justify-center items-center h-8 w-8 rounded-lg bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500 transition-colors group-focus:ring-2 group-focus:ring-violet-600 group-focus:ring-offset-2 group-focus:ring-offset-background">
                         <Checkbox.Indicator>

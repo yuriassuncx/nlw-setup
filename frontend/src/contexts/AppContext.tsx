@@ -1,6 +1,14 @@
 import { createContext, useEffect, useState } from "react";
 
+type User = {
+    name: string;
+    email: string;
+    picture: string;
+}
+
 type AuthContextType = {
+    user: User | null;
+    setUser: any;
     theme: string;
     setTheme: React.Dispatch<React.SetStateAction<"dark" | "light">>;
     activeMenu: boolean;
@@ -18,6 +26,8 @@ export function AppProvider({ children }: ChildrenProps) {
         localStorage.getItem("theme") !== "dark" ? "light" : "dark"
     );
 
+    const [user, setUser] = useState<User | null>(null);
+
     const [activeMenu, setActiveMenu] = useState(true); 
 
     useEffect(() => {
@@ -32,7 +42,7 @@ export function AppProvider({ children }: ChildrenProps) {
     }, [theme]);
 
     return (
-        <AppContext.Provider value={{ theme, setTheme, activeMenu, setActiveMenu }}>
+        <AppContext.Provider value={{ user, setUser, theme, setTheme, activeMenu, setActiveMenu }}>
             {children}
         </AppContext.Provider>
     )
