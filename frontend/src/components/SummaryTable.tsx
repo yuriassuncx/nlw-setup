@@ -25,7 +25,7 @@ export function SummaryTable() {
 
     useEffect(() => {
         api.get('summary').then((response) => setSumarry(response.data))
-    }, [])
+    }, []);
 
     return (
         <div className="flex flex-col lg:flex-row w-full pb-8 lg:pb-0">

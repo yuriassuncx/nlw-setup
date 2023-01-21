@@ -6,11 +6,11 @@ import axios from "axios";
 import * as Dialog from '@radix-ui/react-dialog';
 import logoImage from '../assets/logo.svg';
 
-import { MoonStars, SunDim, Plus, X } from "phosphor-react";
+import { MoonStars, SunDim, Plus, X, List } from "phosphor-react";
 import { NewHabitForm } from "./NewHabitForm";
 
 export function Header() {
-    const { theme, setTheme, user, setUser } = useApplication();
+    const { theme, setTheme, user, setUser, setActiveMenu } = useApplication();
 
     const login = useGoogleLogin({
         onSuccess: async credentialResponse => {
@@ -98,6 +98,8 @@ export function Header() {
                                 Light Mode
                             </button>
                         )}
+
+                        <List size={42} className="text-violet-500 p-2 hover:bg-slate-200 rounded-full cursor-pointer" onClick={() => setActiveMenu((prev) => !prev)} />
 
                         <Dialog.Portal>
                             <Dialog.Overlay className="w-screen h-screen bg-slate-200/80 dark:bg-black/80 fixed inset-0" />

@@ -8,7 +8,7 @@ type User = {
 
 type AuthContextType = {
     user: User | null;
-    setUser: any;
+    setUser: React.Dispatch<React.SetStateAction<User | null>>;
     theme: string;
     setTheme: React.Dispatch<React.SetStateAction<"dark" | "light">>;
     activeMenu: boolean;
