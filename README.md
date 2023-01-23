@@ -10,7 +10,6 @@ Projeto desenvolvido de acordo com o NLW Setup, da Rocketseat, com o intuito de 
 - [x] Construído com TailwindCSS
 - [x] Projeto Altamente Responsivo
 - [x] Requisição via Axios
-- [x] Utilização de swr (useSWR)
 - [x] Uso do TypeScript
 - [x] Uso de Contextos
 - [x] Dark Theme / Light Theme
